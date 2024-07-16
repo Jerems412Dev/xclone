@@ -1,0 +1,39 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/dbxclone?createDatabaseIfNotExist=true
+    username: root
+    password:
+    driverClassName: com.mysql.cj.jdbc.Driver
+  application:
+    name: xclone
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphql
+    schema:
+      printer:
+        enabled: true
+
+
+info:
+  application:
+    name: xclone
+    version: '@project.version@'
+
+application:
+  security:
+    jwt:
+      secret-key: 59d407208c0bfb4fc52780506cdecd71cbde23b4dd622bc80d84b66e9efc4dd2
